@@ -10,7 +10,7 @@ if getattr(sys, 'frozen', False):
 else:
   cur_path = os.path.dirname(__file__)
 
-FONT_PATH = os.path.join(cur_path, 'resources/OpenSans-Regular.ttf')
+FONT_PATH = os.path.join(cur_path, 'resources\OpenSans-Regular.ttf')
 
 pygame.init()
 size = width, height = 900, 600
