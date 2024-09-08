@@ -25,6 +25,7 @@ screen = pygame.display.set_mode(size)
 mediumFont = pygame.font.Font(FONT_PATH, 32)
 largeFont = pygame.font.Font(FONT_PATH, 50)
 moveFont = pygame.font.Font(FONT_PATH, 60)
+scoreFont = pygame.font.Font(FONT_PATH, 45)
 
 user = None
 ai_turn = False
@@ -168,22 +169,22 @@ while True:
             screen.blit(again, againRect)
 
             # draw scores
-            scores = largeFont.render("scores:", True, black)
+            scores = scoreFont.render("scores:", True, black)
             scoresRect = scores.get_rect()
             scoresRect.center = (100, 220)
-            scoresRect.x = 25
+            scoresRect.x = 20
             screen.blit(scores, scoresRect)
 
-            aiscores = largeFont.render(f"AI: {game.scores[1-int((1-sign2player[user])/2)]}", True, black)
+            aiscores = scoreFont.render(f"AI: {game.scores[1-int((1-sign2player[user])/2)]}", True, black)
             aiscoresRect = aiscores.get_rect()
             aiscoresRect.center = (100, 300)
-            aiscoresRect.x = 25
+            aiscoresRect.x = 20
             screen.blit(aiscores, aiscoresRect)
 
-            huscores = largeFont.render(f'Human: {game.scores[int((1-sign2player[user])/2)]}', True, black)
+            huscores = scoreFont.render(f'Human: {game.scores[int((1-sign2player[user])/2)]}', True, black)
             huscoresRect = huscores.get_rect()
             huscoresRect.center = (100, 380)
-            huscoresRect.x = 25
+            huscoresRect.x = 20
             screen.blit(huscores, huscoresRect)
 
             # detect click
